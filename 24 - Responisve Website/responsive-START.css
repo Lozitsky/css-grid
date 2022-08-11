@@ -1,7 +1,3 @@
-:root {
-  --yellow: #ffc600;
-}
-
 body {
   font-size: 15px;
 }
@@ -67,3 +63,26 @@ img {
   font-weight: 300;
 }
 
+.menu > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 10px;
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.menu a {
+  background: var(--yellow);
+  display: block;
+  text-decoration: none;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 19px;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+[aria-controls="menu-list"] {
+  display: none;
+}
