@@ -80,7 +80,7 @@ img {
   transform: rotateX(90deg);
   max-height: 0;
   overflow: hidden;
-  transition: all .5s ;
+  transition: all .5s;
 }
 
 .menu a {
@@ -140,7 +140,7 @@ img {
 .about {
   background: white;
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
   padding: 50px;
 }
@@ -216,6 +216,10 @@ img {
 
   [aria-controls="menu-list"] {
     display: none;
+  }
+
+  .about {
+    grid-template-columns: 400px 1fr;
   }
 }
 
