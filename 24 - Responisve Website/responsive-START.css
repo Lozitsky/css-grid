@@ -67,6 +67,7 @@ img {
 
 .menu {
   order: -1;
+  perspective: 800px;
 }
 
 .menu > ul {
@@ -76,9 +77,10 @@ img {
   list-style: none;
   padding: 0;
 
-  height: 0;
   transform: rotateX(90deg);
-  transition: all .5s;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .5s ;
 }
 
 .menu a {
@@ -94,6 +96,11 @@ img {
 
 [aria-controls="menu-list"] {
   display: block;
+}
+
+[aria-expanded="true"] ~ ul {
+  max-height: 500px;
+  transform: rotateX(0);
 }
 
 .features {
@@ -191,8 +198,8 @@ img {
   }
 
   .menu > ul {
-    height: auto;
-    transform: none;
+    max-height: max-content;
+    transform: rotateX(0);
   }
 
   [aria-controls="menu-list"] {

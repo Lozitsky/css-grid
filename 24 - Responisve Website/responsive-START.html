@@ -102,8 +102,16 @@
   </div>
 
   <script>
+    const menuBtn = document.querySelector('.menu');
+
+    const toggleVisible = ({target}) => {
+      const expanded = target.getAttribute('aria-expanded') === 'true';
+      target.setAttribute('aria-expanded', !expanded);
+    };
+
+    menuBtn.addEventListener('click', toggleVisible);
   </script>
-  
+
 </body>
 
 </html>
