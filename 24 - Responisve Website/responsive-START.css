@@ -103,6 +103,18 @@ img {
   transform: rotateX(0);
 }
 
+[aria-expanded="true"] .close {
+  display: inline-block;
+}
+
+[aria-expanded="true"] .open {
+  display: none;
+}
+
+[aria-expanded="false"] .close {
+  display: none;
+}
+
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

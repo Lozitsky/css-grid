@@ -102,11 +102,11 @@
   </div>
 
   <script>
-    const menuBtn = document.querySelector('.menu');
+    const menuBtn = document.querySelector('button[aria-expanded]');
 
     const toggleVisible = ({target}) => {
       const expanded = target.getAttribute('aria-expanded') === 'true';
-      target.setAttribute('aria-expanded', !expanded);
+      menuBtn.setAttribute('aria-expanded', !expanded);
     };
 
     menuBtn.addEventListener('click', toggleVisible);
