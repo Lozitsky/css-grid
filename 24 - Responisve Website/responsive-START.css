@@ -19,9 +19,6 @@ img {
 
 .top {
   display: grid;
-  grid-template-areas:
-    "hero hero cta1"
-    "hero hero cta2";
   grid-gap: 20px;
 }
 
@@ -68,12 +65,20 @@ img {
   font-weight: 300;
 }
 
+.menu {
+  order: -1;
+}
+
 .menu > ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 10px;
   list-style: none;
   padding: 0;
+
+  height: 0;
+  transform: rotateX(90deg);
+  transition: all .5s;
 }
 
 .menu a {
@@ -88,7 +93,7 @@ img {
 }
 
 [aria-controls="menu-list"] {
-  display: none;
+  display: block;
 }
 
 .features {
@@ -150,3 +155,57 @@ img {
 .gallery > h2:after {
   --direction: right;
 }
+
+/*region------------------------media-------------------------------------*/
+
+/* Extra small devices (phones, 599px and down) */
+@media only screen and (max-width: 599px) {
+  .top {
+    grid-template-areas:
+      "hero"
+      "cta1"
+      "cta2";
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .top {
+    grid-template-areas:
+      "hero hero"
+      "cta1 cta2";
+  }
+}
+
+/* Medium devices (landscape tablets, 900px and up) */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/float */
+@media only screen and (min-width: 900px) {
+  .top {
+    grid-template-areas:
+    "hero hero cta1"
+    "hero hero cta2";
+  }
+
+  .menu {
+    order: 0;
+  }
+
+  .menu > ul {
+    height: auto;
+    transform: none;
+  }
+
+  [aria-controls="menu-list"] {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+/* Extra large devices (large desktops, 1800px and up) */
+@media only screen and (min-width: 1800px) {
+}
+
+/*endregion-------------------------------media----------------------------------------------*/
